@@ -37,6 +37,7 @@ PerformHttpRequest("https://raw.githubusercontent.com/ShadowCodding/PersonalizeM
             print("^1[PersonalizeMenu] - Discord : https://discord.gg/fCgXFJYVBv^7")
         elseif comparison == 0 then
             print("^2[PersonalizeMenu] - Version à jour ("..versionActuelle..")^7")
+            print("^2[PersonalizeMenu] - Discord : https://discord.gg/fCgXFJYVBv^7")
         end
     else
         print("^1[PersonalizeMenu] - Échec de la vérification de version. Code : "..code.."^7")

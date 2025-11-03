@@ -31,6 +31,12 @@ server_scripts {
 --    'zUI',
 --}
 
+escrow_ignore {
+    "client/*.lua",
+    "server/*.lua",
+    "config.lua",
+}
+
 exports {
     'getMyPersonalTheme'
 }
