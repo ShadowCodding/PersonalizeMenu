@@ -27,4 +27,8 @@ Le module PersonalizeMenu permet aux utilisateurs de personnaliser l'apparence e
     assert(type(theme) == "table", "zUI.ApplyTheme: Le thème '" .. theme .. "' n'est pas dans un format valide")
     ```
    pour que le script fonctionne correctement.
-2. 
+2. Ajouter ces 2 lignes dans zUI/menu/main.lua en dessous de la ligne 95
+    ```lua
+    local myTheme = exports["PersonalizeMenu"]:getMyPersonalTheme()
+    menu.theme = myTheme and myTheme or menu.theme
+    ```

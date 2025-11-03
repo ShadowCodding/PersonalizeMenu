@@ -60,7 +60,7 @@ zUI.SetItems(main_menu, function()
 
     zUI.Button("Enregistrer ce thème", nil, {}, function(onSelected)
         if onSelected then
-            zUI.CloseAll()
+            zUI.ManageFocus(false)
             local themeName = input_showBox("Nom du thème", "", 30)
             if themeName and themeName ~= "" then
                 if data.myThemes[themeName] then
@@ -70,7 +70,7 @@ zUI.SetItems(main_menu, function()
                 data.myThemes[themeName] = data.personalizeMenu
                 SetResourceKvp("PersonalizeMenu:MyThemes", json.encode(data.myThemes))
                 logs.suc(("Thème enregistré sous le nom : %s"):format(themeName))
-                zUI.SetVisible(main_menu, true)
+                zUI.ManageFocus(true)
             else
                 logs.err("Nom de thème invalide.")
             end
@@ -233,7 +233,7 @@ zUI.SetItems(main_menu, function()
                                 end
 
                                 if onSelected then
-                                    zUI.CloseAll()
+                                    zUI.ManageFocus(false)
 
                                     -- permet de saisir une valeur manuellement
                                     local input = input_showBox("Opacité du fond", "", 3)
@@ -251,7 +251,7 @@ zUI.SetItems(main_menu, function()
                                         ("rgba(%s, %s, %s, %.2f)"):format(r, g, b, op)
                                         zUI.ApplyTheme(data.personalizeMenu)
                                         logs.suc(("Opacité du fond modifiée à %.0f%%"):format(num))
-                                        zUI.SetVisible(main_menu, true)
+                                        zUI.ManageFocus(true)
                                     end
                                 end
                             end
@@ -274,6 +274,7 @@ zUI.SetItems(my_themes_menu, function()
                 end
                 SetResourceKvp("PersonalizeMenu:CurrentTheme", themeName)
                 logs.suc(("Thème '%s' appliqué."):format(themeName))
+                print(json.encode(themeData, { indent = true }))
                 zUI.CloseAll()
                 zUI.SetVisible(main_menu, true)
             end
