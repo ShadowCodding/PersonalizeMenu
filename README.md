@@ -36,6 +36,5 @@ Le module PersonalizeMenu permet aux utilisateurs de personnaliser l'apparence e
         menu.theme = myTheme and myTheme or menu.theme
     ```
 3. N'oubliez pas de start le script PersonalizeMenu.
-
 ### Auteur
 - **ShadowCodding**
