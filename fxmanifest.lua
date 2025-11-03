@@ -12,6 +12,8 @@ game 'gta5'
 author 'ShadowCodding'
 description 'Personalize Menu for zUI library'
 version '1.0.0'
+lua54 'yes'
+repository 'https://ShadowCodding/PersonalizeMenu'
 
 shared_scripts {
     'config.lua',
