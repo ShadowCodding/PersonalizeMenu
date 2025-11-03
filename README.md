@@ -29,6 +29,13 @@ Le module PersonalizeMenu permet aux utilisateurs de personnaliser l'apparence e
    pour que le script fonctionne correctement.
 2. Ajouter ces 2 lignes dans zUI/menu/main.lua en dessous de la ligne 95
     ```lua
-    local myTheme = exports["PersonalizeMenu"]:getMyPersonalTheme()
-    menu.theme = myTheme and myTheme or menu.theme
+        local myTheme = nil
+        if (GetResourceState("PersonalizeMenu") == "started") then
+            myTheme = exports["PersonalizeMenu"]:getMyPersonalTheme()
+        end
+        menu.theme = myTheme and myTheme or menu.theme
     ```
+3. N'oubliez pas de start le script PersonalizeMenu.
+
+### Auteur
+- **ShadowCodding**
